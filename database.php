@@ -1,7 +1,7 @@
 <?php
     $dsn = 'mysql:host=localhost;dbname=shop-images';
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);
@@ -10,4 +10,3 @@
         include('database_error.php');
         exit();
     }
-?>
