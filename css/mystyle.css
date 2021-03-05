@@ -42,14 +42,15 @@ nav ul li {
 /* Here is where the body style stars */
 body {
   background-color: #ccc;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
   /* margin-top: 0; */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat";
   width: 1000px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #c00505;
   border: 1px solid black;
   padding: 0.5em 2em;
 }
