@@ -1,18 +1,24 @@
 /* Here is where the body style stars */
 
 body {
- background-color: #ccc;
- font-family: "Montserrat", sans-serif;
+ background-image: url("../image_uploads/background.gif");
+ background-color: #cccccc;
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ font-family: $font;
+ height: 95%;
+ width: 95%;
 }
 
 .container {
  /* margin-top: 0; */
- font-family: "Montserrat";
- width: 1000px;
+ font-family: $font;
+ width: 1500px;
  margin: 0 auto;
- background-color: rgb(192, 5, 5);
+ background-color: #ffffff;
  border: 1px solid black;
- padding: 0.5em 2em;
+ padding: 0.5em 5em 0em 5em;
 }
 
 section {
@@ -39,13 +45,14 @@ a:hover {
 table {
  border: 1px solid black;
  border-collapse: collapse;
+ width: 800px;
 }
 td,
 th {
- border: 1px dashed black;
- padding: 0.2em 0.5em 0.2em 0.5em;
- vertical-align: top;
- text-align: left;
+ border: 1px solid black;
+ padding: 0.2em 3em;
+ vertical-align: auto;
+ text-align: center;
 }
 form {
  margin: 0;
@@ -53,10 +60,13 @@ form {
 br {
  clear: left;
 }
+
 /* the styles for classes */
-.right {
- text-align: right;
+
+.product_info {
+ font-weight: bold;
 }
+
 .last_paragraph {
  margin-bottom: 2em;
 }
@@ -64,18 +74,16 @@ br {
  margin-top: 1em;
 }
 
-#add_record_form {
+.add_component_form {
  margin: 0.5em 0 1em;
 }
-#add_record_form label {
- width: 6em;
+.add_component_form label {
+ font-weight: bold;
+ width: 12em;
  padding-right: 1em;
- padding-bottom: 0.5em;
+ padding-bottom: 1em;
  float: left;
 }
-#add_record_form input {
+.add_component_form input {
  float: left;
-}
-#add_record_form input[text] {
- width: 15em;
 }

@@ -31,59 +31,70 @@ $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
 
-// Get records for selected category
-$queryRecords = "SELECT * FROM records
+// Get components for selected category
+$querycomponents = "SELECT * FROM components
 WHERE categoryID = :category_id
-ORDER BY recordID";
-$statement3 = $db->prepare($queryRecords);
+ORDER BY componentID";
+$statement3 = $db->prepare($querycomponents);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$records = $statement3->fetchAll();
+$components = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
   <?php
   include('includes/header.php');
   ?>
-  <h1>Record List</h1>
+  <h1>Components</h1>
 
   <?php
   include('includes/sidebar.php');
   ?>
   <section>
-    <!-- display a table of records -->
+    <!-- display a table of components -->
     <h2><?php echo $category_name; ?></h2>
     <table>
       <tr>
         <th>Image</th>
         <th>Name</th>
         <th>Price</th>
+        <th>Stock</th>
         <th>Delete</th>
         <th>Edit</th>
+        <th>Buy</th>
       </tr>
-      <?php foreach ($records as $record) : ?>
+      <?php foreach ($components as $component) : ?>
         <tr>
-          <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-          <td><?php echo $record['name']; ?></td>
-          <td class="right"><?php echo $record['price']; ?></td>
+          <td><img src="image_uploads/<?php echo $component['image']; ?>" width="100px" height="100px" /></td>
+          <td><?php echo $component['name']; ?></td>
+          <td><?php echo $component['price']; ?></td>
+          <td><?php echo $component['stock']; ?></td>
           <td>
-            <form action="delete_record.php" method="post" id="delete_record_form">
-              <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-              <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
-              <input type="submit" value="Delete">
+            <form action="delete_component.php" method="post">
+              <input type="hidden" name="component_id" value="<?php echo $component['componentID']; ?>">
+              <input type="hidden" name="category_id" value="<?php echo $component['categoryID']; ?>">
+              <input type="submit" value="Delete" class="red-button">
             </form>
           </td>
           <td>
-            <form action="edit_record_form.php" method="post" id="delete_record_form">
-              <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-              <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
-              <input type="submit" value="Edit">
+            <form action="edit_component_form.php" method="post">
+              <input type="hidden" name="component_id" value="<?php echo $component['componentID']; ?>">
+              <input type="hidden" name="category_id" value="<?php echo $component['categoryID']; ?>">
+              <input type="submit" value="Edit" class="blue-button">
+            </form>
+          </td>
+          <td>
+            <form action="purchase_component_form.php" method="post">
+              <input type="hidden" name="component_id" value="<?php echo $component['componentID']; ?>">
+              <input type="hidden" name="category_id" value="<?php echo $component['categoryID']; ?>">
+              <input type="submit" value="Buy" class="green-button">
             </form>
           </td>
         </tr>
       <?php endforeach; ?>
     </table>
-    <p><a href="add_record_form.php">Add Record</a></p>
+    <p><a href="add_component_form.php">Add Component</a></p>
+
     <p><a href="category_list.php">Manage Categories</a></p>
   </section>
   <?php

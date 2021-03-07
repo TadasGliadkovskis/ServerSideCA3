@@ -23,6 +23,17 @@ header {
   border-bottom: 2px solid black;
 }
 
+header #head-logo {
+  position: absolute;
+  top: 17;
+  width: 50px;
+  height: 50px;
+  background-image: url("../image_uploads/logo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 header h1 {
   margin: 0;
   padding: 0.5em 0;
@@ -41,18 +52,24 @@ nav ul li {
 
 /* Here is where the body style stars */
 body {
-  background-color: #ccc;
-  font-family: "Montserrat", sans-serif;
+  background-image: url("../image_uploads/background.gif");
+  background-color: #cccccc;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Montserrat;
+  height: 95%;
+  width: 95%;
 }
 
 .container {
   /* margin-top: 0; */
-  font-family: "Montserrat";
-  width: 1000px;
+  font-family: Montserrat;
+  width: 1500px;
   margin: 0 auto;
-  background-color: #c00505;
+  background-color: #ffffff;
   border: 1px solid black;
-  padding: 0.5em 2em;
+  padding: 0.5em 5em 0em 5em;
 }
 
 section {
@@ -83,14 +100,15 @@ a:hover {
 table {
   border: 1px solid black;
   border-collapse: collapse;
+  width: 800px;
 }
 
 td,
 th {
-  border: 1px dashed black;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  vertical-align: top;
-  text-align: left;
+  border: 1px solid black;
+  padding: 0.2em 3em;
+  vertical-align: auto;
+  text-align: center;
 }
 
 form {
@@ -102,8 +120,8 @@ br {
 }
 
 /* the styles for classes */
-.right {
-  text-align: right;
+.product_info {
+  font-weight: bold;
 }
 
 .last_paragraph {
@@ -114,29 +132,26 @@ br {
   margin-top: 1em;
 }
 
-#add_record_form {
+.add_component_form {
   margin: 0.5em 0 1em;
 }
 
-#add_record_form label {
-  width: 6em;
+.add_component_form label {
+  font-weight: bold;
+  width: 12em;
   padding-right: 1em;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
   float: left;
 }
 
-#add_record_form input {
+.add_component_form input {
   float: left;
-}
-
-#add_record_form input[text] {
-  width: 15em;
 }
 
 /* Here is where the sidebar style stars */
 aside {
   float: left;
-  width: 150px;
+  width: 200px;
 }
 
 /* Here is where the footer style stars */
@@ -150,5 +165,59 @@ footer p {
   text-align: right;
   font-size: 80%;
   margin: 1em 0;
+}
+
+/* Start of buttons */
+.green-button,
+.red-button,
+.blue-button,
+.purple-button {
+  padding: 7px 10px;
+  font-size: 0.875rem;
+  line-height: normal;
+  border-radius: 0.3rem;
+  color: #fff;
+  border: none;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.purple-button {
+  background-color: #5a26bb;
+}
+
+.green-button {
+  background-color: #28a745;
+}
+
+.red-button {
+  background-color: #dc3545;
+}
+
+.blue-button {
+  background-color: #3545dc;
+}
+
+.purple-button:hover {
+  background-color: #461046;
+}
+
+.green-button:hover {
+  background-color: #107020;
+}
+
+.red-button:hover {
+  background-color: #a01020;
+}
+
+.blue-button:hover {
+  background-color: #1020a0;
+}
+
+.green-button[disabled] {
+  background-color: #dacdcd;
 }
 /*# sourceMappingURL=mystyle.css.map */
