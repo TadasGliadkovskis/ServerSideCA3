@@ -77,13 +77,13 @@ $statement->closeCursor();
               <p id="totalPrice" class="product_info" name="total"><?php echo ('€' . $components['price']); ?></p>
 
               <label>&nbsp;</label>
-              <input type="submit" value="Purchase" class="green-button" id="submit" disabled=true">
+              <input type="submit" value="Purchase" class="green-button" id="submit">
               <br>
 
               <input type="hidden" id="passedValuePrice" name="passedValuePrice" value="findTotal(<?php echo $components['price']; ?>)">
        </form>
 
-       <script src="validation.js"></script>
+       <!-- <script src="validation.js"></script> -->
 
 
        <p><a href=".?category_id=<?php echo $category_id ?>">View Homepage</a></p>
