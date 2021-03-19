@@ -76,14 +76,14 @@ br {
 
 .add_component_form {
  margin: 0.5em 0 1em;
-}
-.add_component_form label {
- font-weight: bold;
- width: 12em;
- padding-right: 1em;
- padding-bottom: 1em;
- float: left;
-}
-.add_component_form input {
- float: left;
+ input {
+  float: left;
+ }
+ label {
+  font-weight: bold;
+  width: 12em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  float: left;
+ }
 }

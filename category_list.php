@@ -31,7 +31,9 @@ $statement->closeCursor();
         <tr>
             <th>Name</th>
             <th>&nbsp;</th>
-            <th>&nbsp;</th>
+            <th>Delete Category</th>
+            <th>Clear Category</th>
+            <th>Total Components</th>
         </tr>
         <?php foreach ($categories as $category) : ?>
             <tr>

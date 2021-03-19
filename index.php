@@ -93,9 +93,9 @@ $statement3->closeCursor();
         </tr>
       <?php endforeach; ?>
     </table>
-    <p><a href="add_component_form.php">Add Component</a></p>
+    <p><a href="add_component_form.php" class="green-button">Add Component</a></p>
 
-    <p><a href="category_list.php">Manage Categories</a></p>
+    <p><a href="category_list.php" class="purple-button">Manage Categories</a></p>
   </section>
   <?php
   include('includes/footer.php');

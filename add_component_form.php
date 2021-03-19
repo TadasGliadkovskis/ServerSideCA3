@@ -19,7 +19,7 @@ $statement->closeCursor();
     <form action="add_component.php" method="post" enctype="multipart/form-data" class="add_component_form">
 
         <label>Category:</label>
-        <select name="category_id">
+        <select name="category_ID">
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
                     <?php echo $category['categoryName']; ?>

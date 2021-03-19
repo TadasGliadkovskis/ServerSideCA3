@@ -1,14 +1,14 @@
 <?php
 
 // Get the product data
-$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+$categoryID = filter_input(INPUT_POST, 'category_ID', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 $stock = filter_input(INPUT_POST, 'stock', FILTER_VALIDATE_INT);
 
 // Validate inputs
 if (
-    $category_id == null || $category_id == false ||
+    $categoryID == null || $categoryID == false ||
     $name == null || $price == null || $price == false || $stock == null
 ) {
     $error = "Invalid component data. Check all fields and try again.";
@@ -68,11 +68,11 @@ if (
     $query = "INSERT INTO components
                  (categoryID, name, price, stock, image)
               VALUES
-                 (:category_id, :name, :price, :stock, :image)";
+                 (:LMAO, :name, :price, :stock, :image)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
-    $statement->bindValue(':name', $name);
+    $statement->bindValue(':LMAO', $categoryID);
     $statement->bindValue(':price', $price);
+    $statement->bindValue(':name', $name);
     $statement->bindValue(':stock', $stock);
     $statement->bindValue(':image', $image);
     $statement->execute();

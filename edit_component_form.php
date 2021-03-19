@@ -53,7 +53,7 @@ $statement->closeCursor();
               <br>
 
               <label>Image:</label>
-              <input type="file" name="image" accept="image/*" required />
+              <input type="file" name="image" accept="image/*" />
               <br>
               <?php if ($components['image'] != "") { ?>
                      <p><img src="image_uploads/<?php echo $components['image']; ?>" height="150" /></p>

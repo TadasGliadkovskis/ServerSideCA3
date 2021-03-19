@@ -14,6 +14,6 @@ In order to run this project locally you require
 
 After installing xampp and running it, using the .sql file to create a database and tables
 you can connect to the database and manipulate it via this projects website
-(https://github.com/TadasGliadkovskis/PHP-CRUD-CA/tree/main/image_uploads/logo.png "Logo")
+![alt text](https://github.com/TadasGliadkovskis/PHP-CRUD-CA/tree/main/image_uploads/logo.png "Logo")
 
 Project on remote server [Project homepage](https://mysql04.comp.dkit.ie/D00229061/serverProject/index.php)

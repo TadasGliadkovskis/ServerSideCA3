@@ -24,11 +24,13 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `orders`,`components`,`categories`;
+
+
 --
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `categoryID` int(11) NOT NULL,
   `categoryName` varchar(255) NOT NULL
@@ -50,13 +52,12 @@ INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
 -- Table structure for table `components`
 --
 
-DROP TABLE IF EXISTS `components`;
 CREATE TABLE `components` (
   `componentID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `stock` int(11) NOT NULL,
+  `stock` int(1) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -79,8 +80,32 @@ INSERT INTO `components` (`componentID`, `categoryID`, `name`, `price`, `stock`,
 (12, 3, 'STRIX Z490-H', '210.00', 9, 'STRIX Z490-H.jpg');
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `componentID` int(11) NOT NULL,
+  `orderID` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `orders`
+--
+
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderID`),
+  ADD KEY `componentID` (`componentID`);
 
 --
 -- Indexes for table `categories`
@@ -112,14 +137,27 @@ ALTER TABLE `components`
   MODIFY `componentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `orders`
+--
+
+ALTER TABLE `orders`
+  ADD CONSTRAINT `components_ibfk_1` FOREIGN KEY (`componentID`) REFERENCES `components` (`componentID`);
 
 --
 -- Constraints for table `components`
 --
 ALTER TABLE `components`
-  ADD CONSTRAINT `components_ibfk_1` FOREIGN KEY (`categoryID`) REFERENCES `categories` (`categoryID`);
+  ADD CONSTRAINT `components_ibfk_2` FOREIGN KEY (`categoryID`) REFERENCES `categories` (`categoryID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
